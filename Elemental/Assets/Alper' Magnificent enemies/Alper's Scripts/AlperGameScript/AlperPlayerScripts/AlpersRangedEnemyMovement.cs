@@ -14,9 +14,13 @@ public class EnemyMovement : MonoBehaviour
     private float DistanceShoot = 8.0f;
     private float timetofire;
     public float fireRate = 2;
+    
     private Rigidbody2D rigidbody;
     private Vector2 TargetDirection;
     private GameObject player;
+    private GameObject EnemyBullet;
+    private Transform EnemyFirePoint;
+    public float bulletforce = 15f;
     void Awake()
     {
     
@@ -57,6 +61,10 @@ public class EnemyMovement : MonoBehaviour
         if (distanceToPlayer <= Distance)
         {
             rigidbody.velocity = Vector2.zero; // Stop the enemy when close to the player.
+            
+        }
+        if(distanceToPlayer <= DistanceShoot)
+        {
             Shoot();
         }
     }
