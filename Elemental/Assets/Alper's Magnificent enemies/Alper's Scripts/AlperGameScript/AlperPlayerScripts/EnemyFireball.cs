@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyFireball : MonoBehaviour
+public class EnemyFireBall : MonoBehaviour
 {
     public float life = 1.5f;
     public EnemyLogic enemyLogic;
@@ -25,5 +25,4 @@ public class EnemyFireball : MonoBehaviour
         }
         
     }
-
 }
