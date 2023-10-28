@@ -31,10 +31,11 @@ public class EnemyLogic : MonoBehaviour
     void Update()
     {
         if(hp <= 0 )
-        {
+        {   
+            float score = 5*ScoreScript.multiplier;
             Destroy(gameObject);
-            ScoreScript.killCount += 1;
-            ScoreScript.scoreValue +=5;
+            ScoreScript.killCount += 1; 
+            ScoreScript.scoreValue +=score;
         } 
     }
         
