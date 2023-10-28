@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class EnemyShoot : MonoBehaviour
 {
+    public Transform EnemyGunOffSet;
     public  GameObject EnemyBulletPrefab;
     public float EnemyBulletSpeed;
      private Vector2 TargetDirection;
