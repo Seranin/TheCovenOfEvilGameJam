@@ -8,6 +8,7 @@ TagManager:
   - TrailEnemy
   - Bullet
   - Milk
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
