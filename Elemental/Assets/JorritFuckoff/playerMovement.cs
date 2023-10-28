@@ -7,10 +7,9 @@ public class playerMovement : MonoBehaviour
     Rigidbody2D rg;
     public float horizontalMovement;
     public float verticalMovement;
-    float speedX;
-    float speedY;
+    public float speed = 8;
     public Vector2 movement;
-    public float maxSpeed = 8.0f; 
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,13 +26,8 @@ public class playerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        speedX = horizontalMovement*9;
-        speedY = verticalMovement*9;
-        movement = new Vector2(speedX, speedY);
-        rg.AddForce(movement);
-        if (rg.velocity.magnitude > maxSpeed)
-        {
-            rg.velocity = rg.velocity.normalized * maxSpeed;
-        }
+        movement = new Vector2(horizontalMovement, verticalMovement).normalized;
+        rg.velocity = new Vector2(movement.x*speed,movement.y*speed);
+        
     }
 }
