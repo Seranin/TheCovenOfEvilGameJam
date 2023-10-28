@@ -9,6 +9,8 @@ public class EnemyMovement : MonoBehaviour
     private float speed;
     [SerializeField]
     private float rotationspeed;
+    [SerializeField]
+    private float Distance = 5.0f;
     private Rigidbody2D rigidbody;
     private Vector2 TargetDirection;
     private GameObject player;
@@ -29,6 +31,7 @@ public class EnemyMovement : MonoBehaviour
     {
         RotateTowardsTarget();
         SetVelocity();
+        CheckDistance();
 
     }
     private void RotateTowardsTarget()
@@ -43,5 +46,14 @@ public class EnemyMovement : MonoBehaviour
     private void SetVelocity()
     {
         rigidbody.velocity = transform.up * speed;
+    }
+   private void CheckDistance()
+    {
+        float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+
+        if (distanceToPlayer <= Distance)
+        {
+            rigidbody.velocity = Vector2.zero; // Stop the enemy when close to the player.
+        }
     }
 }

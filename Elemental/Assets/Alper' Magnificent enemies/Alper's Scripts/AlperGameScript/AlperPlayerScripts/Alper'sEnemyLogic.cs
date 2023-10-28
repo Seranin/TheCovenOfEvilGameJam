@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class EnemyLogic : MonoBehaviour
+public class AlperEnemyLogic : MonoBehaviour
 {
     public float hp = 30;
     public float damagetaken = 10;
