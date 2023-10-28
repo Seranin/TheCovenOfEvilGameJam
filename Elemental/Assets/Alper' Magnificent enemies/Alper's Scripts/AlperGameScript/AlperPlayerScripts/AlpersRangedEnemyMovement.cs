@@ -11,6 +11,9 @@ public class EnemyMovement : MonoBehaviour
     private float rotationspeed;
     [SerializeField]
     private float Distance = 5.0f;
+    private float DistanceShoot = 8.0f;
+    private float timetofire;
+    public float fireRate = 2;
     private Rigidbody2D rigidbody;
     private Vector2 TargetDirection;
     private GameObject player;
@@ -54,6 +57,20 @@ public class EnemyMovement : MonoBehaviour
         if (distanceToPlayer <= Distance)
         {
             rigidbody.velocity = Vector2.zero; // Stop the enemy when close to the player.
+            Shoot();
         }
+    }
+    private void Shoot()
+    {
+        if(timetofire <= 0)
+        {
+            Debug.Log("Shoot");
+            timetofire = fireRate;
+
+        }else
+        {
+            timetofire -= Time.deltaTime;
+        }
+
     }
 }

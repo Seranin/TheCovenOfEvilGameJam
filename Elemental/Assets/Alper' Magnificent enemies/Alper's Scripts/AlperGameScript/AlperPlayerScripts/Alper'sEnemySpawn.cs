@@ -11,7 +11,7 @@ public class AlpersEnemySpawn : MonoBehaviour
     [SerializeField]
     private GameObject BrandPref;
     [SerializeField]
-    private float minimuSpawntime;
+    private float minimumSpawntime;
     [SerializeField]
     private float maximumSpawnTime;
 
@@ -25,24 +25,30 @@ public class AlpersEnemySpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            timeUntilSpawn -= Time.deltaTime;
-            if(timeUntilSpawn <= 0)
+        timeUntilSpawn -= Time.deltaTime;
+        if(timeUntilSpawn <= 0)
+        {
+            int Type = Random.Range(1,6);
+            if(Type <= 4)
             {
-                int UnitType = Random.Range(1,6);
-                if(UnitType <= 3)
-                {
-                    Instantiate(ZombiePref,transform.position,Quaternion.identity);
-                    
-                }
-                else if(3 < UnitType && UnitType <= 5)
-                {
-                    Instantiate(BrandPref,transform.position,Quaternion.identity); 
-                }
+                Instantiate(ZombiePref,transform.position,Quaternion.identity);
+                SetTimeUntilSpawn();
             }
-            SetTimeUntilSpawn();
+            else
+            {
+                Instantiate(BrandPref,transform.position,Quaternion.identity);
+                SetTimeUntilSpawn(); 
+
+            }
+                    
+
+            
+                
+        }
+        
     }
     private void SetTimeUntilSpawn()
     {
-        timeUntilSpawn = Random.Range(minimuSpawntime,maximumSpawnTime);
+        timeUntilSpawn = Random.Range(minimumSpawntime,maximumSpawnTime);
     }
 }

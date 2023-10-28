@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4782391810894603772}
   - component: {fileID: 8467697213981882790}
   - component: {fileID: 3236745769881112952}
+  - component: {fileID: 694308813549671982}
   m_Layer: 0
   m_Name: RangedEnemy
   m_TagString: TrailEnemy
@@ -164,3 +165,19 @@ MonoBehaviour:
   speed: 1
   rotationspeed: 100
   Distance: 5
+  fireRate: 0
+--- !u!114 &694308813549671982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8291459370341420105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbb8baa1ef6ab3a42a6ecad9ee44ddbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 30
+  damagetaken: 10
+  bullet: {fileID: 0}
