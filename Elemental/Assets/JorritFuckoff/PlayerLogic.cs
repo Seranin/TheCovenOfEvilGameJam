@@ -51,7 +51,7 @@ public class playerLogic : MonoBehaviour
         hp -= remainingDamage;
         //insert animation blink here!!!!!!!!
     }
-
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "TrailEnemy")
