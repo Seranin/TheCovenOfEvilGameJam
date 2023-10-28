@@ -1,64 +1,3 @@
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEditor.Callbacks;
-// using UnityEngine;
-
-// public class playerMovement : MonoBehaviour
-// {   
-//     Rigidbody2D rg;
-//     public float horizontalMovement;
-//     public float verticalMovement;
-//     public float speed = 8;
-//     public Vector2 movement;
-//     public Vector2 mousePosition;
-//     public Vector2 aimDirection;
-//     public weaponBehavior weapon;
-//     public float noDashTimer = 5.0f;
-//     public float timeToRegen = 1.0f;
-
-
-//     // Start is called before the first frame update
-//     void Start()
-//     {
-//         rg = GetComponent<Rigidbody2D>();
-//     }
-
-//     // Update is called once per frame
-//     void Update()
-//     {
-//         verticalMovement = Input.GetAxisRaw("Vertical");
-//         horizontalMovement =  Input.GetAxisRaw("Horizontal");
-//         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-//         if(Input.GetMouseButtonDown(0))
-//         {
-            
-//             weapon.Fire();
-//         }
-//         noDashTimer += Time.deltaTime;
-        
-//     }
-
-//     void FixedUpdate()
-//     {
-//         //movement
-//         movement = new Vector2(horizontalMovement, verticalMovement).normalized;
-//         rg.velocity = new Vector2(movement.x,movement.y)*speed;
-//         //aiming
-//         aimDirection= mousePosition-rg.position;
-//         float aimAngle =Mathf.Atan2(aimDirection.y,aimDirection.x)*Mathf.Rad2Deg -90f;
-//         rg.rotation = aimAngle;
-//         if(Input.GetMouseButtonDown(1))
-//         {
-//             if (noDashTimer >= timeToRegen)
-//             {
-//                 Vector2 dashVector = movement * 2f; // Multiply the movement vector by 2
-//                 rg.MovePosition(rg.position + dashVector);
-//                 noDashTimer = 0;
-//             }
-
-//         } 
-//     }
-// }
 using System.Collections;
 using UnityEngine;
 
@@ -122,7 +61,7 @@ public class playerMovement : MonoBehaviour
         //aiming
         aimDirection= mousePosition-rg.position;
         float aimAngle =Mathf.Atan2(aimDirection.y,aimDirection.x)*Mathf.Rad2Deg -90f;
-        rg.rotation = aimAngle;
+        rg.MoveRotation(aimAngle);
         }
         
         

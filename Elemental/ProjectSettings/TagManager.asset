@@ -9,6 +9,8 @@ TagManager:
   - Bullet
   - Milk
   - EnemyBullet
+  - Parry
+  - Vase
   layers:
   - Default
   - TransparentFX

@@ -137,6 +137,41 @@ public class playerLogic : MonoBehaviour
         }
         
     }
+    private void OnTriggerEnter2D (Collider2D other)
+    {
+        if(other.gameObject.tag == "Milk")
+        {       
+                if (hp == maxhp){
+                    int n = 0;
+                    bool wentOverFive= false;
+                    while (n<4){
+
+                        float score = 5*ScoreScript.multiplier;
+                        ScoreScript.killCount += 1;
+                        
+                        if (wentOverFive){
+                            score = 5*(ScoreScript.multiplier+0.2f);
+                        }
+                        ScoreScript.scoreValue +=score;
+                        n++;
+                        Debug.Log(n);
+                        Debug.Log(ScoreScript.scoreValue);
+                        if(ScoreScript.killCount%5 == 0 && ScoreScript.killCount !=0)
+                        {
+                            wentOverFive = true;
+                        } 
+                    } 
+                    
+                
+                } 
+                hp +=20;
+                if (hp>maxhp){
+                    hp =maxhp;
+                }
+                StartCoroutine(DamageCooldown(1.5f));
+        }
+    }
+    
 
 
     IEnumerator DamageCooldown(float time)
