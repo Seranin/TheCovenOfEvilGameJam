@@ -9,9 +9,12 @@ public class playerLogic : MonoBehaviour
 
     public float maxhp = 100;
     public float shield = 50; 
+    public float maxShield =50;
     public float damagetaken = 10;
 
     private bool isTakingDamage = false;
+    
+    private bool shieldAllowed = true;
 
     // Start is called before the first frame update
     void Start()
@@ -24,12 +27,29 @@ public class playerLogic : MonoBehaviour
     {
         
     }
-
+    public void shieldregen(){
+        shieldAllowed = true;
+        shieldCooldown(5);
+        if(shieldAllowed)
+        {
+            shield+=10;
+            if(shield> 50)
+            {
+                shield =50;
+            }
+        }
+    }
     public void dealDamage(float damage)
     {
-        //if()
-        hp -= damage;
-        //insert animation here!!!!!!!!
+        float remainingDamage = damage;
+        remainingDamage = damage - shield;
+        if(shield>0)
+        {
+            shield-=damage;
+            if(remainingDamage<0){remainingDamage = 0;}
+        }
+        hp -= remainingDamage;
+        //insert animation blink here!!!!!!!!
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -41,6 +61,7 @@ public class playerLogic : MonoBehaviour
                 Debug.Log("ahhh i took damage");
                 dealDamage(damagetaken);
                 isTakingDamage = true;
+                shieldAllowed = false;
                 StartCoroutine(DamageCooldown(0.5f));
             }
 
@@ -86,6 +107,7 @@ public class playerLogic : MonoBehaviour
     {
         if(collision.gameObject.tag == "TrailEnemy")
         {
+            shieldAllowed = false;
             if(!isTakingDamage)
             {
                 Debug.Log("ahhh i took damage");
@@ -108,5 +130,9 @@ public class playerLogic : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         isTakingDamage = false;
+    }
+    IEnumerator shieldCooldown(float time)
+    {
+        yield return new WaitForSeconds(time);
     }
 }
