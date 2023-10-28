@@ -33,7 +33,8 @@ public class EnemyLogic : MonoBehaviour
         if(hp <= 0 )
         {
             Destroy(gameObject);
-
+            ScoreScript.killCount += 1;
+            ScoreScript.scoreValue +=5;
         } 
     }
         
