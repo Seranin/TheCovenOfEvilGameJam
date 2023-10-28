@@ -4,12 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< Updated upstream
+  - Enemy
   - TrailEnemy
   - Bullet
-=======
-  - Enemy
->>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
