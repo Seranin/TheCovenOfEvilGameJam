@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class playerMovement : MonoBehaviour
-{
+{   
     Rigidbody2D rg;
     public float horizontalMovement;
     public float verticalMovement;
     float speedX;
     float speedY;
-    Vector2 movement;
+    public Vector2 movement;
+    public float maxSpeed = 8.0f; 
+
     // Start is called before the first frame update
     void Start()
     {
         rg = GetComponent<Rigidbody2D>();
-
-        
     }
 
     // Update is called once per frame
@@ -23,17 +23,17 @@ public class playerMovement : MonoBehaviour
     {
         verticalMovement = Input.GetAxisRaw("Vertical");
         horizontalMovement =  Input.GetAxisRaw("Horizontal");
-        
-        
     }
+
     void FixedUpdate()
     {
-        speedX = horizontalMovement;
-        speedY = verticalMovement;
+        speedX = horizontalMovement*9;
+        speedY = verticalMovement*9;
         movement = new Vector2(speedX, speedY);
         rg.AddForce(movement);
-        // if(rg.velocity.magnitude >= 5){
-        //     rg.velocity.magnitude.
-        // }
+        if (rg.velocity.magnitude > maxSpeed)
+        {
+            rg.velocity = rg.velocity.normalized * maxSpeed;
+        }
     }
 }
