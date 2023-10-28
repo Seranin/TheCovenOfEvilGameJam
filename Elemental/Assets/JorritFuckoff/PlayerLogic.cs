@@ -1,4 +1,4 @@
- using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -13,8 +13,9 @@ public class playerLogic : MonoBehaviour
     public float damagetaken = 10;
 
     private bool isTakingDamage = false;
-    
     private bool shieldAllowed = true;
+    private float noDamageTimer = 0.0f;
+    private float timeToRegen = 5.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,13 +24,24 @@ public class playerLogic : MonoBehaviour
     }
 
     // Update is called once per frame
+    /* void Update()
+    {
+        shieldregen(); 
+    } */
     void Update()
     {
-        
+        if (!isTakingDamage)
+        {
+            noDamageTimer += Time.deltaTime;
+            if (noDamageTimer >= timeToRegen)
+            {
+                shieldregen();
+                noDamageTimer = 0;
+            }
+        }
     }
     public void shieldregen(){
         shieldAllowed = true;
-        shieldCooldown(5);
         if(shieldAllowed)
         {
             shield+=10;
@@ -38,7 +50,7 @@ public class playerLogic : MonoBehaviour
                 shield =50;
             }
         }
-    }
+    } 
     public void dealDamage(float damage)
     {
         float remainingDamage = damage;
@@ -47,7 +59,8 @@ public class playerLogic : MonoBehaviour
         {
             shield-=damage;
             if(remainingDamage<0){remainingDamage = 0;}
-        }
+            //insert shield animation
+        } 
         hp -= remainingDamage;
         //insert animation blink here!!!!!!!!
     }
@@ -62,13 +75,13 @@ public class playerLogic : MonoBehaviour
                 dealDamage(damagetaken);
                 isTakingDamage = true;
                 shieldAllowed = false;
+                noDamageTimer = 0.0f; // Reset the timer when damage is taken.
                 StartCoroutine(DamageCooldown(0.5f));
             }
 
             if(hp <= 0 )
             {   
                 Destroy(gameObject);
-                //queue game over screen
             }
         }
         if(collision.gameObject.tag == "Milk")
@@ -131,8 +144,5 @@ public class playerLogic : MonoBehaviour
         yield return new WaitForSeconds(time);
         isTakingDamage = false;
     }
-    IEnumerator shieldCooldown(float time)
-    {
-        yield return new WaitForSeconds(time);
-    }
+    
 }

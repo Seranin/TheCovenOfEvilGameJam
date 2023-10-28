@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -5,9 +6,10 @@ using UnityEngine;
 
 public class EnemyLogic : MonoBehaviour
 {
+    private GameObject bullet;
     public float hp = 30;
     public float damagetaken = 10;
-    public GameObject bullet;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,8 @@ public class EnemyLogic : MonoBehaviour
             dealDamage(damagetaken);
         }
     }
+
+    
     // Update is called once per frame
     void Update()
     {
