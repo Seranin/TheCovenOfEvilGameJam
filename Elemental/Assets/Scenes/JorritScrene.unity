@@ -275,7 +275,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -391,7 +391,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 30
   damagetaken: 10
-  bullet: {fileID: 0}
 --- !u!61 &757632337
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -537,7 +536,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 30
   damagetaken: 10
-  bullet: {fileID: 0}
 --- !u!61 &994001824
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -683,7 +681,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 30
   damagetaken: 10
-  bullet: {fileID: 0}
 --- !u!61 &1085180170
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -860,7 +857,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 30
   damagetaken: 10
-  bullet: {fileID: 0}
 --- !u!61 &1466917230
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1052,7 +1048,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 30
   damagetaken: 10
-  bullet: {fileID: 0}
 --- !u!61 &1599379416
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1198,7 +1193,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 30
   damagetaken: 10
-  bullet: {fileID: 0}
 --- !u!61 &1633712438
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1344,7 +1338,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 30
   damagetaken: 10
-  bullet: {fileID: 0}
 --- !u!61 &1650441888
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1602,7 +1595,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 30
   damagetaken: 10
-  bullet: {fileID: 0}
 --- !u!1 &1719773794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1636,7 +1628,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 30
   damagetaken: 10
-  bullet: {fileID: 0}
 --- !u!61 &1719773796
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1782,7 +1773,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 30
   damagetaken: 10
-  bullet: {fileID: 0}
 --- !u!61 &1736855353
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1928,7 +1918,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 30
   damagetaken: 10
-  bullet: {fileID: 0}
 --- !u!61 &2019397934
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2243,6 +2232,11 @@ MonoBehaviour:
   mousePosition: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
   weapon: {fileID: 8036487750621076693}
+  noDashTimer: 2
+  dashCooldown: 2
+  dashspeed: 2
+  dashVector: {x: 0, y: 0}
+  dashing: 0
 --- !u!212 &7412502265842565671
 SpriteRenderer:
   m_ObjectHideFlags: 0
