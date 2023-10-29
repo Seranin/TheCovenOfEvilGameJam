@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 50912fb09e756d948a70cf3e08ad913f
+guid: 7f2e2137f269c0844bef9249d6db64b7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,6 +69,19 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -106,30 +119,38 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: zombie movement_0
+      name: dog_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e7867e46ddf4334fbf4d1b3790edd09
+      internalID: -1071104465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 106
-        width: 24
-        height: 28
+        y: 0
+        width: 16
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +158,62 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba77ce14be421184d9f977d34238554a
-      internalID: -1368284687
+      spriteID: 5850b5c21384fb546a7828be5acaaf84
+      internalID: -56718917
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zombie movement_1
+      name: dog_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a323d086b7842f0458ce8e7107ab586a
+      internalID: 2052566336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d8ce9feb7a62bf4f8e7e0de2abfac0a
+      internalID: 1175953393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_4
       rect:
         serializedVersion: 2
         x: 64
-        y: 106
-        width: 25
-        height: 28
+        y: 0
+        width: 16
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04381631fefd3a045ab5b15b74883b85
-      internalID: 1611184713
+      spriteID: 5bfc0c1b11b3ed24890738d6dd030504
+      internalID: -1435380347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zombie movement_2
+      name: dog_5
       rect:
         serializedVersion: 2
-        x: 111
-        y: 106
-        width: 23
-        height: 28
+        x: 80
+        y: 0
+        width: 16
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a5d95990c9528d43a2395f57dbaec67
-      internalID: 1020823009
+      spriteID: 329b5bf2bcc22b642873bd6f62b6e02b
+      internalID: 295896864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zombie movement_3
+      name: dog_6
       rect:
         serializedVersion: 2
-        x: 14
-        y: 58
-        width: 22
-        height: 28
+        x: 96
+        y: 0
+        width: 16
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,41 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49eac3ae9da1ad449af85d1471705d44
-      internalID: -2065502649
+      spriteID: f90b0ea977325e44f965088c2c7bdce7
+      internalID: -1441234227
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zombie movement_4
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 58
-        width: 20
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 90206b33451a38f4c9be6c4c1baffcfb
-      internalID: 755989836
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: zombie movement_5
+      name: dog_7
       rect:
         serializedVersion: 2
         x: 112
-        y: 58
-        width: 21
-        height: 28
+        y: 0
+        width: 16
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,50 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf058449389f37241ab2a9f7b3fc67c7
-      internalID: -1904892174
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: zombie movement_6
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 10
-        width: 25
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bad2e95ab96f35543b6791292a48d854
-      internalID: 1955850121
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: zombie movement_7
-      rect:
-        serializedVersion: 2
-        x: 62
-        y: 10
-        width: 26
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a028648b0dc0854eba197573a7b3fba
-      internalID: 207796478
+      spriteID: 5937a073dbb4a434ebfca8c77f0c0bd4
+      internalID: 166651885
       vertices: []
       indices: 
       edges: []
@@ -301,14 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      zombie movement_0: -1368284687
-      zombie movement_1: 1611184713
-      zombie movement_2: 1020823009
-      zombie movement_3: -2065502649
-      zombie movement_4: 755989836
-      zombie movement_5: -1904892174
-      zombie movement_6: 1955850121
-      zombie movement_7: 207796478
+      dog_0: -1071104465
+      dog_1: -56718917
+      dog_2: 2052566336
+      dog_3: 1175953393
+      dog_4: -1435380347
+      dog_5: 295896864
+      dog_6: -1441234227
+      dog_7: 166651885
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
