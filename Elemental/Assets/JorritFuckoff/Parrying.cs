@@ -33,6 +33,7 @@ public class Parrying : MonoBehaviour
         if(sindsLastParry>parryTime)
         {
             isParrying = false;
+            colliderList = new List<Collider2D>();
         }
         if(noParryTimer>parryCooldown)
         {   
@@ -56,6 +57,7 @@ public class Parrying : MonoBehaviour
             Debug.Log("pain");
             if (!colliderList.Contains(other))
             {
+                //input hit sound
                 Debug.Log("Fuck you Akif im not changing it again!!!!!!!!");
                 GameObject fireBall = Instantiate(fireBalls, firePoint.position, firePoint.rotation);
                 fireBall.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
