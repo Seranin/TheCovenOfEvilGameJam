@@ -13,7 +13,7 @@ public class playerMovement : MonoBehaviour
     public weaponBehavior weapon;
     public float noDashTimer = 2.0f;
     public float dashCooldown = 2.0f;
-    public float dashspeed = 2.0f;
+    public float dashspeed = 8.0f;
     public Vector2 dashVector = Vector2.zero;
     public bool dashing = false ;
 
@@ -37,13 +37,13 @@ public class playerMovement : MonoBehaviour
         noDashTimer += Time.deltaTime;       
         
         dashVector = Vector2.zero;
-        if(Input.GetMouseButtonDown(1))
+        if(Input.GetButton("Jump"))
         {
              
             if (noDashTimer >= dashCooldown)
             {
                 dashVector = movement * dashspeed;
-                rg.MovePosition(rg.position + dashVector);
+                rg.MovePosition(rg.position + new Vector2(movement.x*5,movement.y*5));
                 noDashTimer = 0;
                 dashVector = Vector2.zero;
                 Debug.Log("hfbdjjn");

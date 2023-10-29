@@ -17,10 +17,21 @@ public class enemyBullet : MonoBehaviour
     }
     private void OnTriggerEnter2D (Collider2D other)
     {   
-        if(other.gameObject.tag == "Parry")
+        if(other.GetComponent<playerMovement>())
         {
-            Debug.Log("i'm so fucking done");
-            Destroy(gameObject);
+            Destroy(gameObject); 
+        }
+
+        if(other.GetComponent<Parrying>() && Parrying.isParrying)
+        {
+            Destroy(gameObject); 
+        }
+    }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if(other.GetComponent<Parrying>() && Parrying.isParrying)
+        {
+            Destroy(gameObject); 
         }
     }
 }
