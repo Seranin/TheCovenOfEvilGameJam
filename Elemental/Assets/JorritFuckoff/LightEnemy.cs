@@ -1,3 +1,72 @@
+// using System.Collections;
+// using System.Collections.Generic;
+// using UnityEngine;
+// using UnityEngine.InputSystem;
+
+// public class LightEnemyMovement : MonoBehaviour
+// {
+//     [SerializeField]
+//     private float speed;
+//     [SerializeField]
+//     private float rotationspeed;
+//     [SerializeField]
+//     private float Distance = 40;
+//     private Rigidbody2D rb;
+//     private Vector2 TargetDirection;
+//     private GameObject player;
+//     void Awake()
+//     {
+    
+//         rb =  GetComponent<Rigidbody2D>();
+//         player = GameObject.FindGameObjectWithTag("Player");
+        
+//     }
+//     void Update()
+//     {
+//         if(!LightEnemyShoot.isCharging)
+//         {
+//             TargetDirection = (player.transform.position - transform.position).normalized;
+//         }
+//         rb.velocity = Vector2.zero;
+//         RotateTowardsTarget();
+
+//     }
+
+//     private void FixedUpdate()
+//     {
+//         if(!LightEnemyShoot.isCharging)
+//         {
+//             RotateTowardsTarget();
+//             SetVelocity();
+//             CheckDistance();
+//         }
+//         RotateTowardsTarget();
+
+//     }
+//     private void RotateTowardsTarget()
+//     {
+//         //transform.LookAt(player.transform);
+//         transform.up = TargetDirection;
+        
+//         //transform.rotation.SetEulerRotation
+//         //Quaternion targetRotaion = Quaternion.LookRotation(transform.right,TargetDirection);
+//         //Quaternion rotation = Quaternion.RotateTowards(transform.rotation,targetRotaion, rotationspeed * Time.deltaTime);
+//         //rigidbody.SetRotation(rotation);
+//     }
+//     private void SetVelocity()
+//     {
+//         rb.velocity = transform.up * speed;
+//     }
+//    private void CheckDistance()
+//     {
+//         float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+
+//         if (distanceToPlayer <= Distance)
+//         {
+//             rb.velocity = Vector2.zero; // Stop the enemy when close to the player.
+//         }
+//     }
+// }
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,13 +80,13 @@ public class LightEnemyMovement : MonoBehaviour
     private float rotationspeed;
     [SerializeField]
     private float Distance = 5.0f;
-    private Rigidbody2D rb;
+    private Rigidbody2D rigidbody;
     private Vector2 TargetDirection;
     private GameObject player;
     void Awake()
     {
     
-        rb =  GetComponent<Rigidbody2D>();
+        rigidbody =  GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         
     }
@@ -37,9 +106,7 @@ public class LightEnemyMovement : MonoBehaviour
     private void RotateTowardsTarget()
     {
         //transform.LookAt(player.transform);
-        float aimAngle =Mathf.Atan2(TargetDirection.y,TargetDirection.x)*Mathf.Rad2Deg -90f;
-        rb.MoveRotation(aimAngle);
-        
+        transform.up = TargetDirection;
         //transform.rotation.SetEulerRotation
         //Quaternion targetRotaion = Quaternion.LookRotation(transform.right,TargetDirection);
         //Quaternion rotation = Quaternion.RotateTowards(transform.rotation,targetRotaion, rotationspeed * Time.deltaTime);
@@ -47,7 +114,7 @@ public class LightEnemyMovement : MonoBehaviour
     }
     private void SetVelocity()
     {
-        rb.velocity = transform.up * speed;
+        rigidbody.velocity = transform.up * speed;
     }
    private void CheckDistance()
     {
@@ -55,7 +122,7 @@ public class LightEnemyMovement : MonoBehaviour
 
         if (distanceToPlayer <= Distance)
         {
-            rb.velocity = Vector2.zero; // Stop the enemy when close to the player.
+            rigidbody.velocity = Vector2.zero; // Stop the enemy when close to the player.
         }
     }
 }

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChargeBeam : MonoBehaviour
+public class BamScript : MonoBehaviour
 {
-    public float timeToLive = 1.5f;
+    public float timeToLive = 0.5f;
     public float TimeLived;
     // Start is called before the first frame update
     void Start()

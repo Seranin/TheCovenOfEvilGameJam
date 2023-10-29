@@ -86,31 +86,35 @@ public class LightEnemyShoot : MonoBehaviour
     public float EnemyBulletSpeed =1;
     private Vector2 TargetDirection;
     private GameObject player;
-    public float ShootDistance;
+    public float ShootDistance = 40;
     public float TimeToShootAgain;
     public float EnemyShootRate;
     public float chargeUp = 6;
     public Vector2 lastPlayerPosition;
     public float firstChargHit = 1;
     public float LastChargeHit = 1.5f;
+    public bool didntshoot= true;
+    public Quaternion savedRotation;
+    public static bool isCharging = false;
     
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        EnemyShootRate = 1;
+        EnemyShootRate = 8;
     }
 
     // Update is called once per frame
     void Update()
     {
-         TargetDirection = (player.transform.position - transform.position).normalized;
-         if(chargeUp> firstChargHit)
+        TargetDirection = (player.transform.position - transform.position).normalized;
+        if(chargeUp> firstChargHit)
         {
-            Debug.Log(" he goes into shoot normaly");
+            Debug.Log(" he goes into the firtst if");
             
-            if(chargeUp< firstChargHit)
+            if(chargeUp< LastChargeHit)
             {    
+                Debug.Log(" he goes into shoot normaly");
                 Shoot();
             }
         }
@@ -124,7 +128,6 @@ public class LightEnemyShoot : MonoBehaviour
             TimeToShootAgain += Time.deltaTime;
         }
         chargeUp += Time.deltaTime;
-        Debug.Log(chargeUp);
         
 
         
@@ -144,20 +147,24 @@ public class LightEnemyShoot : MonoBehaviour
     {
         if(TimeToShootAgain >= EnemyShootRate)
        {
-        lastPlayerPosition = player.transform.position;
-        GameObject EnemyBullet = Instantiate(EnemyChareUpBeamPrefab,lastPlayerPosition,transform.rotation);
+        lastPlayerPosition = EnemyGunOffSet.position;
+        savedRotation = transform.rotation;
+        
+        GameObject EnemyBullet = Instantiate(EnemyChareUpBeamPrefab,EnemyGunOffSet.position,transform.rotation);
         chargeUp = 0;
         TimeToShootAgain= 0;
+        didntshoot = true;
+        isCharging= true;
        }
     }
     public void Shoot()
     {
-       if(TimeToShootAgain >= EnemyShootRate)
-       {
-        GameObject EnemyBullet = Instantiate(EnemyBeamPrefab,lastPlayerPosition,transform.rotation);
-        
-       }
-       
-
+        if (didntshoot)
+        {
+            GameObject EnemyBullet = Instantiate(EnemyBeamPrefab,lastPlayerPosition,savedRotation);   
+            didntshoot= false;
+            isCharging= false;
+        }
+         
     }
 }

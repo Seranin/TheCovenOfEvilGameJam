@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 1590264920888828849}
   - component: {fileID: 7949504158325537555}
   - component: {fileID: 8214022908701785525}
+  - component: {fileID: 3305661219128765937}
   m_Layer: 0
   m_Name: Beam
-  m_TagString: Untagged
+  m_TagString: Beam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,3 +131,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3305661219128765937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5636123036262805287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42a37fb3a573b7c4ea9be3a1a8b69768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToLive: 0.5
+  TimeLived: 0

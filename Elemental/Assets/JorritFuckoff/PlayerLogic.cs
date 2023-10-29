@@ -11,6 +11,7 @@ public class playerLogic : MonoBehaviour
     public float shield = 50; 
     public float maxShield =50;
     public float damagetaken = 10;
+     public float damagetakenBeam = 40;
 
     private bool isTakingDamage = false;
     private bool shieldAllowed = true;
@@ -170,6 +171,41 @@ public class playerLogic : MonoBehaviour
                 }
                 StartCoroutine(DamageCooldown(1.5f));
         }
+        if(other.gameObject.tag == "Beam")
+        {
+            shieldAllowed = false;
+            if(!isTakingDamage)
+            {
+                Debug.Log("ahhh i took damage");
+                dealDamage(damagetakenBeam);
+                isTakingDamage = true;
+                StartCoroutine(DamageCooldown(0.5f));
+            }
+
+            if(hp <= 0 )
+            {   
+                Destroy(gameObject);
+                //queue game over screen
+            }
+        }
+        if(other.gameObject.tag == "EnemyBullet")
+        {
+            shieldAllowed = false;
+            if(!isTakingDamage)
+            {
+                Debug.Log("ahhh i took damage");
+                dealDamage(damagetaken);
+                isTakingDamage = true;
+                StartCoroutine(DamageCooldown(0.5f));
+            }
+
+            if(hp <= 0 )
+            {   
+                Destroy(gameObject);
+                //queue game over screen
+            }
+        }
+
     }
     
 

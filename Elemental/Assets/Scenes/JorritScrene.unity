@@ -412,6 +412,7 @@ GameObject:
   - component: {fileID: 304386034}
   - component: {fileID: 304386033}
   - component: {fileID: 304386038}
+  - component: {fileID: 304386039}
   m_Layer: 0
   m_Name: LightEnemy
   m_TagString: Untagged
@@ -433,7 +434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   rotationspeed: 100
-  Distance: 5
+  Distance: 7
 --- !u!58 &304386034
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -556,14 +557,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304386032}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.86136043, w: 0.5079943}
   m_LocalPosition: {x: 10.766, y: 3.728, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 662901290}
+  - {fileID: 1674054136}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 118.939}
 --- !u!114 &304386038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,13 +582,29 @@ MonoBehaviour:
   EnemyBeamPrefab: {fileID: 5636123036262805287, guid: 763dc0ac3bd6a31428534d458be0bcd5, type: 3}
   EnemyChareUpBeamPrefab: {fileID: 4901597479204124586, guid: 7c23f6e1c1c777441bd05a5b0e571b04, type: 3}
   EnemyBulletSpeed: 0
-  ShootDistance: 80
-  TimeToShootAgain: 8
+  ShootDistance: 7
+  TimeToShootAgain: 7
   EnemyShootRate: 9
   chargeUp: 6
   lastPlayerPosition: {x: 0, y: 0}
   firstChargHit: 1
   LastChargeHit: 1.5
+  didntshoot: 1
+  savedRotation: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &304386039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304386032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbb8baa1ef6ab3a42a6ecad9ee44ddbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 30
+  damagetaken: 10
 --- !u!1 &330275893
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,7 +865,7 @@ Transform:
   m_GameObject: {fileID: 662901289}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.008, y: 0.726, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1226,6 +1244,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &982768348
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5039604376940462092, guid: f1d26dc902603df408800ea8690b0dd8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.1118073
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039604376940462092, guid: f1d26dc902603df408800ea8690b0dd8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.097392
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039604376940462092, guid: f1d26dc902603df408800ea8690b0dd8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039604376940462092, guid: f1d26dc902603df408800ea8690b0dd8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039604376940462092, guid: f1d26dc902603df408800ea8690b0dd8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039604376940462092, guid: f1d26dc902603df408800ea8690b0dd8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039604376940462092, guid: f1d26dc902603df408800ea8690b0dd8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039604376940462092, guid: f1d26dc902603df408800ea8690b0dd8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039604376940462092, guid: f1d26dc902603df408800ea8690b0dd8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039604376940462092, guid: f1d26dc902603df408800ea8690b0dd8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441425473093242925, guid: f1d26dc902603df408800ea8690b0dd8, type: 3}
+      propertyPath: m_Name
+      value: RangedEnemy Akif
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f1d26dc902603df408800ea8690b0dd8, type: 3}
 --- !u!1 &1101241404
 GameObject:
   m_ObjectHideFlags: 0
@@ -1770,6 +1845,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   testmulti: 1
   checkChange: 0
+--- !u!1 &1674054135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1674054136}
+  m_Layer: 0
+  m_Name: lzaervffectefsdfg
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1674054136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674054135}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.01, y: 0.58, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 304386037}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2121583226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1916,3 +2022,4 @@ SceneRoots:
   - {fileID: 742563398}
   - {fileID: 693780873}
   - {fileID: 304386037}
+  - {fileID: 982768348}
