@@ -33,6 +33,10 @@ public class playerLogic : MonoBehaviour
     } */
     void Update()
     {   
+        if(shield<0)
+        {
+            shield= 0;
+        }
         Debug.Log(score);
         if (!isTakingDamage)
         {
