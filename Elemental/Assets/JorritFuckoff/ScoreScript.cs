@@ -16,7 +16,6 @@ public class ScoreScript : MonoBehaviour
     void Start()
     {
         scoreValue = 0;
-        multiplier = 1;
         killCount = 0;
         //score = GetComponent<Text>();
     }

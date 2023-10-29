@@ -19,10 +19,12 @@ public class playerLogic : MonoBehaviour
     private float timeToRegen = 5.0f;
     public static bool ishit;
     public static  float score;
+    public float multiplier;
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        multiplier = 1;
         ishit = false;
         score = 0;
     }
@@ -38,6 +40,8 @@ public class playerLogic : MonoBehaviour
         {
             shield= 0;
         }
+        Debug.Log(ScoreScript.multiplier);
+        Debug.Log(ScoreScript.killCount);
         Debug.Log(score);
         if (!isTakingDamage)
         {
@@ -47,6 +51,9 @@ public class playerLogic : MonoBehaviour
                 shieldregen();
                 noDamageTimer = 0;
             }
+        }
+        if (ScoreScript.killCount%5 ==0 && ScoreScript.killCount!= 0){
+            multiplier +=0.2f;
         }
         score = ScoreScript.scoreValue;
         ishit=false;
