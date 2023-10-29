@@ -22,6 +22,7 @@ public class playerLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         score = 0;
     }
 
@@ -31,7 +32,8 @@ public class playerLogic : MonoBehaviour
         shieldregen(); 
     } */
     void Update()
-    {
+    {   
+        Debug.Log(score);
         if (!isTakingDamage)
         {
             noDamageTimer += Time.deltaTime;
@@ -41,7 +43,7 @@ public class playerLogic : MonoBehaviour
                 noDamageTimer = 0;
             }
         }
-        score += ScoreScript.scoreValue;
+        score = ScoreScript.scoreValue;
     }
     public void shieldregen(){
         shieldAllowed = true;
