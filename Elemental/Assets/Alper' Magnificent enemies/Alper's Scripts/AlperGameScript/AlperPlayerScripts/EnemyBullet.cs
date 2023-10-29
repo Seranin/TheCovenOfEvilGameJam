@@ -23,6 +23,19 @@ public class EnemyBullet : MonoBehaviour
             Destroy(gameObject); 
         }
     }
+     private void OnCollisionEnter2D  (Collision2D collision)
+    {
+
+        if(collision.gameObject.tag == "Wall")
+        {
+            Destroy(gameObject);
+        }
+        if(collision.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
+        
+    }
     private void OnTriggerStay2D(Collider2D other)
     {
         if(other.GetComponent<Parrying>() && Parrying.isParrying)

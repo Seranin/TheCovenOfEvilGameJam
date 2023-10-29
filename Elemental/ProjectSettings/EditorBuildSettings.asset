@@ -14,9 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Explanation.unity
     guid: e67e220b5470049e8837314b137dd6c4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Akif's playground.unity
     guid: ae230e89fc3b26a4ea5bbbe27c73f127
+  - enabled: 1
+    path: Assets/Scenes/TestingRange.unity
+    guid: 609fc0156453cd04a9006ec3c852481f
   - enabled: 1
     path: Assets/Scenes/Game over Screen.unity
     guid: 2cbae41e04dfd4b6792cbe0040dade4a

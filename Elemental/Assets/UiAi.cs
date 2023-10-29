@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class UiAi : MonoBehaviour
@@ -33,6 +34,10 @@ public class UiAi : MonoBehaviour
             }
         }
         HpBar.fillAmount = PlayerScrpit.hp /100f; // Hp & shield Bar
+        if(HpBar.fillAmount == 0)
+        {
+            SceneManager.LoadScene(3);
+        }
         ShieldBar.fillAmount = PlayerScrpit.shield /50f;
 
         score.text = string.Format("{0000}", playerLogic.score);
