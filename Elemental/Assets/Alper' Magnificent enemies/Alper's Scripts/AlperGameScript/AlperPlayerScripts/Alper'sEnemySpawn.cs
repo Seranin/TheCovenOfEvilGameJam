@@ -33,7 +33,10 @@ public class AlpersEnemySpawn : MonoBehaviour
         timeUntilSpawn -= Time.deltaTime;
         if(timeUntilSpawn <= 0)
         {
-            int Type = UnityEngine.Random.Range(1,101);
+            Vector3 SpawnPosition = transform.position;
+            if( IsSpawnPointClear(SpawnPosition))
+            {
+                int Type = UnityEngine.Random.Range(1,101);
             if( Type >= 96 )
             {
                 Instantiate(TablePref1,transform.position,Quaternion.identity);
@@ -53,6 +56,9 @@ public class AlpersEnemySpawn : MonoBehaviour
                 Instantiate(ZombiePref,transform.position,Quaternion.identity);
             }
             SetTimeUntilSpawn();    
+
+            }
+           
         }
         
     }
@@ -60,4 +66,11 @@ public class AlpersEnemySpawn : MonoBehaviour
     {
         timeUntilSpawn = Random.Range(minimumSpawntime,maximumSpawnTime);
     }
+    private bool IsSpawnPointClear(Vector3 spawnPosition)
+{
+    float radius = 1.0f; // Adjust this radius to suit your needs
+    Vector3 checkPosition = spawnPosition + Vector3.up * 0.5f; // Ensure the check starts slightly above the spawn point
+    return !Physics.CheckSphere(checkPosition, radius);
+}
+
 }

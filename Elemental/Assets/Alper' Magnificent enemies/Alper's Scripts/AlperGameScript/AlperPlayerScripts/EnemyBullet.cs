@@ -6,16 +6,29 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour
 {
 
-    public float EnemyLife = 2.0f;
+    public float EnemyLife = 3.0f;
     void Awake()
     {
         Destroy(gameObject,EnemyLife);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D (Collider2D other)
     {
-        if(collision.GetComponent<playerMovement>())
+        if(other.GetComponent<playerMovement>())
+        {
+            Destroy(gameObject); 
+        }
+
+        if(other.GetComponent<Parrying>() && Parrying.isParrying)
         {
             Destroy(gameObject); 
         }
     }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if(other.GetComponent<Parrying>() && Parrying.isParrying)
+        {
+            Destroy(gameObject); 
+        }
+    }
+    
 }
