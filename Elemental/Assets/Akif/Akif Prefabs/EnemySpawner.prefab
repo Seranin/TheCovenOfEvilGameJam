@@ -97,6 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 505bb27f03175114bb2b283c0aa3cd40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TablePref: {fileID: 0}
+  LuxPref: {fileID: 1690260177966895056, guid: 328cd67538ecafc43ac28eef81d53bf5, type: 3}
+  MilkPref: {fileID: 0}
   ZombiePref: {fileID: 1068151740707153947, guid: 658a36bf0c4dc5d41973d7ab419f1f85, type: 3}
   BrandPref: {fileID: 8441425473093242925, guid: f1d26dc902603df408800ea8690b0dd8, type: 3}
   minimumSpawntime: 2

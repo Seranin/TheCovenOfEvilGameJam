@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbb8baa1ef6ab3a42a6ecad9ee44ddbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MilkPref: {fileID: 5000834471269431733, guid: 07c7000e563599a4f91ce734aa9daea3, type: 3}
   hp: 30
   damagetaken: 10
 --- !u!61 &5873936430211819175

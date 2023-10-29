@@ -145,6 +145,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 694308813549671982, guid: 85820d7a65caefe4db44fe9bdcfab12b, type: 3}
+      propertyPath: MilkPref
+      value: 
+      objectReference: {fileID: 5000834471269431733, guid: 07c7000e563599a4f91ce734aa9daea3, type: 3}
     - target: {fileID: 3970468279925328917, guid: 85820d7a65caefe4db44fe9bdcfab12b, type: 3}
       propertyPath: ShootDistance
       value: 16

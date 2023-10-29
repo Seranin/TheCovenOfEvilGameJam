@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class EnemyLogic : MonoBehaviour
 {
+    public  GameObject MilkPref;
     private GameObject bullet;
     public float hp = 30;
     public float damagetaken = 10;
@@ -37,6 +38,11 @@ public class EnemyLogic : MonoBehaviour
         if(hp <= 0 )
         {   
             float score = 5*ScoreScript.multiplier;
+            int DropMilk = UnityEngine.Random.Range(1,101);
+            if(DropMilk >= 95)
+            {
+                Instantiate(MilkPref,transform.position,Quaternion.identity);
+            }
             Destroy(gameObject);
             ScoreScript.killCount += 1; 
             ScoreScript.scoreValue +=score;

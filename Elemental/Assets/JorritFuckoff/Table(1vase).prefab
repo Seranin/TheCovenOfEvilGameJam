@@ -143,7 +143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1252363405059762246}
   - component: {fileID: 6988940158102745185}
-  - component: {fileID: 7140546014538780665}
+  - component: {fileID: 4888450436174271457}
   m_Layer: 0
   m_Name: Table(1vase)
   m_TagString: TrailEnemy
@@ -219,7 +219,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7140546014538780665
+--- !u!114 &4888450436174271457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -228,8 +228,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8724948207363029157}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbb8baa1ef6ab3a42a6ecad9ee44ddbc, type: 3}
+  m_Script: {fileID: 11500000, guid: 6acaa52d3222741469647d8a0cc21a46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 30
-  damagetaken: 10

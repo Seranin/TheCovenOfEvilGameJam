@@ -12,7 +12,7 @@ public class EnemyShoot : MonoBehaviour
     private GameObject player;
     public float ShootDistance;
     public float TimeToShootAgain;
-    public float EnemyShootRate;
+    public float EnemyShootRate = 0.5f;
     
     // Start is called before the first frame update
     void Start()

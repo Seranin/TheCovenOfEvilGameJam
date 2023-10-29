@@ -7,6 +7,11 @@ public class AlpersEnemySpawn : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
+    private GameObject TablePref1;
+     [SerializeField]
+    private GameObject LuxPref;
+
+    [SerializeField]
     private GameObject ZombiePref;
     [SerializeField]
     private GameObject BrandPref;
@@ -28,22 +33,26 @@ public class AlpersEnemySpawn : MonoBehaviour
         timeUntilSpawn -= Time.deltaTime;
         if(timeUntilSpawn <= 0)
         {
-            int Type = Random.Range(1,7);
-            if(Type <= 5)
+            int Type = UnityEngine.Random.Range(1,101);
+            if( Type >= 96 )
             {
-                Instantiate(ZombiePref,transform.position,Quaternion.identity);
-                SetTimeUntilSpawn();
+                Instantiate(TablePref1,transform.position,Quaternion.identity);
+                
+
+            }
+            else if(Type >= 81 )
+            {
+                Instantiate(LuxPref,transform.position,Quaternion.identity);
+            }
+            else if( Type > 50)
+            {
+                Instantiate(BrandPref,transform.position,Quaternion.identity);
             }
             else
             {
-                Instantiate(BrandPref,transform.position,Quaternion.identity);
-                SetTimeUntilSpawn(); 
-
+                Instantiate(ZombiePref,transform.position,Quaternion.identity);
             }
-                    
-
-            
-                
+            SetTimeUntilSpawn();    
         }
         
     }
