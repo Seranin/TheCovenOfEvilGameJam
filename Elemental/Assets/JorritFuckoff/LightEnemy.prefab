@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 1254670305377925406}
   m_Layer: 0
   m_Name: LightEnemy
-  m_TagString: Untagged
+  m_TagString: TrailEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -321,6 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbb8baa1ef6ab3a42a6ecad9ee44ddbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MilkPref: {fileID: 0}
   hp: 30
   damagetaken: 10
 --- !u!1 &7903469678436367783
