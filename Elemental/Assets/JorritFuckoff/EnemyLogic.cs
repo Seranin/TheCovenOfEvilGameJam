@@ -39,7 +39,7 @@ public class EnemyLogic : MonoBehaviour
         {   
             float score = 5*ScoreScript.multiplier;
             int DropMilk = UnityEngine.Random.Range(1,101);
-            if(DropMilk >= 95)
+            if(DropMilk >= 90)
             {
                 Instantiate(MilkPref,transform.position,Quaternion.identity);
             }

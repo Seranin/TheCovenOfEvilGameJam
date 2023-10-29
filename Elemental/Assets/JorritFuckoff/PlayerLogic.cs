@@ -17,12 +17,13 @@ public class playerLogic : MonoBehaviour
     private bool shieldAllowed = true;
     private float noDamageTimer = 0.0f;
     private float timeToRegen = 5.0f;
-    public float score;
+    public static bool ishit;
+    public static  float score;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        ishit = false;
         score = 0;
     }
 
@@ -48,6 +49,7 @@ public class playerLogic : MonoBehaviour
             }
         }
         score = ScoreScript.scoreValue;
+        ishit=false;
     }
     public void shieldregen(){
         shieldAllowed = true;
@@ -72,6 +74,7 @@ public class playerLogic : MonoBehaviour
         } 
         hp -= remainingDamage;
         //insert animation blink here!!!!!!!!
+        ishit= true;
     }
     
     private void OnCollisionEnter2D(Collision2D collision)

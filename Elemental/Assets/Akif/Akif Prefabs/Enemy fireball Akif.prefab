@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33676c8e7c4c36840a6cc8bbe7514ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyLife: 2
+  EnemyLife: 4
 --- !u!1 &3715453077977702935
 GameObject:
   m_ObjectHideFlags: 0
