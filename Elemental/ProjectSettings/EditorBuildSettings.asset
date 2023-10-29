@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 84d732fea4461c84abc0a4843bf34593
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Akif's playground.unity
+    guid: ae230e89fc3b26a4ea5bbbe27c73f127
+  - enabled: 1
+    path: Assets/Scenes/JorritScrene.unity
+    guid: a74d2c3999b1caf4ab6ee8d22a8a10f5
+  - enabled: 1
+    path: Assets/Scenes/Mete's Scene.unity
+    guid: 10ea247dc642ac5449421018cedfb597
   m_configObjects: {}
