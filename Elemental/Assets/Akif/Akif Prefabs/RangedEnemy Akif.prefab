@@ -146,6 +146,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3970468279925328917, guid: 85820d7a65caefe4db44fe9bdcfab12b, type: 3}
+      propertyPath: ShootDistance
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3970468279925328917, guid: 85820d7a65caefe4db44fe9bdcfab12b, type: 3}
       propertyPath: EnemyGunOffSet
       value: 
       objectReference: {fileID: 3746394521354615741}
