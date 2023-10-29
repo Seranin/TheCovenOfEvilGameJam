@@ -11,6 +11,7 @@ public class UiAi : MonoBehaviour
     public Image HpBar;
     public Image ShieldBar;
     public TMP_Text time_text;
+    public TMP_Text score;
     private bool timeFlow = false;
     public float timeActive = 0;
 
@@ -33,6 +34,8 @@ public class UiAi : MonoBehaviour
         }
         HpBar.fillAmount = PlayerScrpit.hp /100f; // Hp & shield Bar
         ShieldBar.fillAmount = PlayerScrpit.shield /50f;
+
+        score.text = string.Format("{0000}", playerLogic.score);
     }
 
     void showTime(float curerntTime)
