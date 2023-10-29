@@ -15,4 +15,14 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+    public void RestartGame()
+    {
+        //Go to scene 3 (should be game)
+        SceneManager.LoadScene(2);
+    }
+    public void MainMenuGame()
+    {
+        //Go to scene 1 (should be main menu)
+        SceneManager.LoadScene(0);
+    }
 }
