@@ -17,11 +17,12 @@ public class playerLogic : MonoBehaviour
     private bool shieldAllowed = true;
     private float noDamageTimer = 0.0f;
     private float timeToRegen = 5.0f;
+    public float score;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        score = 0;
     }
 
     // Update is called once per frame
@@ -40,6 +41,7 @@ public class playerLogic : MonoBehaviour
                 noDamageTimer = 0;
             }
         }
+        score += ScoreScript.scoreValue;
     }
     public void shieldregen(){
         shieldAllowed = true;
