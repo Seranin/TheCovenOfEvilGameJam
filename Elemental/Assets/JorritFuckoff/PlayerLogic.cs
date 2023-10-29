@@ -88,7 +88,7 @@ public class playerLogic : MonoBehaviour
     {
         if(collision.gameObject.tag == "TrailEnemy")
         {
-            if(!isTakingDamage)
+            if(!isTakingDamage && !Parrying.isParrying)
             {
                 Debug.Log("ahhh i took damage");
                 dealDamage(damagetaken);
@@ -140,7 +140,7 @@ public class playerLogic : MonoBehaviour
         if(collision.gameObject.tag == "TrailEnemy")
         {
             shieldAllowed = false;
-            if(!isTakingDamage)
+            if(!isTakingDamage && !Parrying.isParrying)
             {
                 Debug.Log("ahhh i took damage");
                 dealDamage(damagetaken);
