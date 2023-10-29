@@ -12,6 +12,7 @@ TagManager:
   - Parry
   - Vase
   - Beam
+  - Wall
   layers:
   - Default
   - TransparentFX
