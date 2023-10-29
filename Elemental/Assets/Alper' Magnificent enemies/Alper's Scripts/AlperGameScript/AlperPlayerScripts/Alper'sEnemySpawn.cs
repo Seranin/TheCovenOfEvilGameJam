@@ -28,7 +28,7 @@ public class AlpersEnemySpawn : MonoBehaviour
         timeUntilSpawn -= Time.deltaTime;
         if(timeUntilSpawn <= 0)
         {
-            int Type = Random.Range(1,6);
+            int Type = Random.Range(1,7);
             if(Type <= 5)
             {
                 Instantiate(ZombiePref,transform.position,Quaternion.identity);

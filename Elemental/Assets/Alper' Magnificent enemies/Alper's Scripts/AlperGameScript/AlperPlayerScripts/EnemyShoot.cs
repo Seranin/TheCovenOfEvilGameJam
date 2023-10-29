@@ -30,6 +30,7 @@ public class EnemyShoot : MonoBehaviour
     {
         CheckDistance();
         TimeToShootAgain += Time.deltaTime;
+        
     }
     private void CheckDistance()
     {
@@ -37,14 +38,16 @@ public class EnemyShoot : MonoBehaviour
 
         if (distanceToPlayer <= ShootDistance)
         {
-           Shoot();
+            Shoot();
+            
         }
+        
     }
     private void Shoot()
     {
        if(TimeToShootAgain >= EnemyShootRate)
        {
-        GameObject EnemyBullet = Instantiate(EnemyBulletPrefab,transform.position,transform.rotation);
+        GameObject EnemyBullet = Instantiate(EnemyBulletPrefab,EnemyGunOffSet.position,transform.rotation);
         Rigidbody2D rigidbody = EnemyBullet.GetComponent<Rigidbody2D>();
         rigidbody.velocity = EnemyBulletSpeed * transform.up;
         TimeToShootAgain = 0;
